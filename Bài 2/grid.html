@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<title>Grid</title>
+		<meta charset="utf-8" />
+		<link href="reset.css" type="text/css" rel="stylesheet" />
+		<link href="style.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<div>
+			
+			  <label for="fname">Số dòng:</label>
+			  <input type="text" id="soDong" name="soDong"><br><br>
+			  <label for="lname">Số cột:</label>
+			  <input type="text" id="soCot" name="soCot"><br><br>
+			  
+			  <button onClick="submit()">Submit</button>
+			
+		</div>
+		<div class="add"></div>
+	</body>
+	<script>
+		const min = 1;
+		const max = 1000;
+		
+		function randomTime(min, max) {
+			return Math.round(Math.random() * (max - min) + min);
+		}
+		
+		function submit(){
+			
+		
+			var soDong = document.getElementById('soDong').value;
+			var soCot = document.getElementById('soCot').value;
+			
+			document.write('<div class="grid-container">');
+
+			for (let i = 0 ; i < soDong; i++) {
+				for (let j = 0 ; j < soCot; j++) {
+		
+					document.write('<div class="grid-item">' + randomTime(min, max)+'</div>');
+				}
+			}
+			document.write('</div>');
+			
+			let auto = "";
+			const addPoint = document.querySelector('.grid-container');
+			
+			const points = document.querySelectorAll('.grid-item');
+		
+			for (let i = 0 ; i < soDong; i++) {
+				auto = auto + "auto ";
+			}
+			console.log(addPoint);
+			addPoint.style.setProperty('display', 'grid');
+			addPoint.style.setProperty('grid-template-columns', `${auto}`);
+			console.log(points);
+			points.forEach(point => point.style.setProperty('border', '1px solid red'));
+
+		}
+		
+		
+	</script>
+</html>
+

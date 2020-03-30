@@ -1,0 +1,715 @@
+
+
+<html>
+	<head>
+		<title>Snake</title>
+		<meta charset="utf-8" />
+		<link href="reset.css" type="text/css" rel="stylesheet" />
+		<link href="style.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<style>
+			table, th, td {
+			  border: 1px solid black;
+			  border-collapse: collapse;
+			}
+		</style>
+		<h3>Snake <span class="score">1</span></h3>
+		<div class="environment">
+			<table>			  
+			  <tr>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+			  </tr>
+			  <tr>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+			  </tr>
+			  <tr>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+			  </tr>
+			  <tr>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+			  </tr>
+			  <tr>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+			  </tr>
+			  <tr>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+			  </tr>
+			  <tr>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+			  </tr>
+			  <tr>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+			  </tr>
+			  <tr>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+			  </tr>
+			  <tr>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+			  </tr>
+			  <tr>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+			  </tr>
+			  <tr>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+			  </tr>
+			  <tr>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+			  </tr>
+			  <tr>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+			  </tr>
+			  <tr>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+			  </tr>
+			  <tr>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+			  </tr>
+			  <tr>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+			  </tr>
+			  <tr>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+			  </tr>
+			  <tr>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+			  </tr>
+			  <tr>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+				<td height="20" width="20"></td>
+			  </tr>
+			</table>
+		</div>
+		<div>
+			<p></p>
+			<button onClick="startGame()">Start!</button>
+		</div>
+	</body>
+	<script>
+		const squares = document.querySelectorAll('td');
+		const scoreBoard = document.querySelector('.score');
+		
+		console.log(squares);
+		console.log(squares.length);
+		
+		let lastPrey;
+		let score = 1;
+		let snakeSt = squares[189];
+		let lastSnake;
+		let lastIdxS;
+
+		var arr = new Array(20);
+		for (var i = 0; i < arr.length; i++) { 
+			arr[i] = new Array(20); 
+		}	
+		var h = 0;
+		var idex = 0;
+		for (var i = 0; i < 20; i++){
+			for (var j = 0; j < 20; j++){
+				arr[i][j] = squares[idex];
+//				arr[i][j] = h++;
+				idex++;
+				console.log(arr[i][j]);
+			}
+		}
+		let preyP = randomPrey(squares);
+		
+		function randomPrey(squares) {
+			const idx = Math.floor(Math.random() * squares.length);
+			const prey = squares[idx];
+//			if (prey === lastPrey) {
+//			  console.log('Ah nah, unable to display because of overlap with the snake!');
+//			  return randomPrey(squares);
+//			}
+//			lastPrey = prey;
+//			console.log(prey);
+			return prey;
+		}
+		
+		function startGame() {
+//			const prey = randomPrey(squares);
+			preyP.classList.add('preyUp');
+			
+			scoreBoard.textContent = 1;
+		//	timeUp = false;
+			score = 1;
+//			peep();
+			snakeSt = arr[10][10];
+			lastIdxSi = 10;
+			lastIdxSj = 10;
+			snakeSt.classList.add('snakeUp');
+			
+			const myVar1 = setInterval(setMoveLeft, 1000);
+				const myVar2 = setInterval(setMoveUp, 1000);
+				const myVar3 = setInterval(setMoveRight, 1000);
+				const myVar4 = setInterval(setMoveDown, 1000);
+		//	setMove();
+		
+			
+//			if (e.keyCode == 38){
+//				setInterval(setMoveUp, 1000);
+//			}
+//			if (e.keyCode == 39){
+//				setInterval(setMoveRight, 1000);
+//			}
+//			if (e.keyCode == 40){
+//				setInterval(setMoveDown, 1000);
+//			}
+			
+		//	peep();
+		//	setTimeout(() => timeUp = true, 10000)
+		}
+		
+	//	function bonk(e) {
+	//		if(!e.isTrusted) return; // cheater!
+	//		score++;
+	//		this.parentNode.classList.remove('up');
+	//		scoreBoard.textContent = score;
+	//	}
+	
+		function setMoveLeft(){
+			let idxSi = lastIdxSi;
+			let idxSj = lastIdxSj;
+			let snakeSt = arr[idxSi][idxSj];
+			snakeSt.classList.remove('snakeUp');
+			
+		//	idxSi = lastIdxSi;
+			idxSj--;
+			
+			arr[idxSi][idxSj].classList.add('snakeUp');
+			console.log(idxSi, idxSj);
+			lastSnake = snakeSt;
+			lastIdxSi = idxSi;
+			lastIdxSj = idxSj;
+			console.log(snakeSt);
+			
+			if (snakeSt === preyP) {
+				preyP.classList.remove('preyUp');
+				score++;
+				scoreBoard.textContent = score;
+				peep();
+			}
+		}
+		
+		function setMoveUp(){
+			let idxSi = lastIdxSi;
+			let idxSj = lastIdxSj;
+			let snakeSt = arr[idxSi][idxSj];
+			snakeSt.classList.remove('snakeUp');
+
+			idxSi--;
+		//	idxSj = lastIdxSj;
+			
+			arr[idxSi][idxSj].classList.add('snakeUp');
+			console.log(idxSi, idxSj);
+			lastSnake = snakeSt;
+			lastIdxSi = idxSi;
+			lastIdxSj = idxSj;
+			console.log(snakeSt);
+			
+			if (snakeSt === preyP) {
+				preyP.classList.remove('preyUp');
+				score++;
+				scoreBoard.textContent = score;
+				peep();
+			}
+		}
+		
+		function setMoveRight(){
+			let idxSi = lastIdxSi;
+			let idxSj = lastIdxSj;
+			let snakeSt = arr[idxSi][idxSj];
+			snakeSt.classList.remove('snakeUp');
+
+		//	idxSi = lastIdxSi;
+			idxSj++;
+			
+			arr[idxSi][idxSj].classList.add('snakeUp');
+			console.log(idxSi, idxSj);
+			lastSnake = snakeSt;
+			lastIdxSi = idxSi;
+			lastIdxSj = idxSj;
+			console.log(snakeSt);
+			
+			if (snakeSt === preyP) {
+				preyP.classList.remove('preyUp');
+				score++;
+				scoreBoard.textContent = score;
+				peep();
+			}
+		}
+		
+		function setMoveDown(){
+			let idxSi = lastIdxSi;
+			let idxSj = lastIdxSj;
+			let snakeSt = arr[idxSi][idxSj];
+			snakeSt.classList.remove('snakeUp');
+
+			idxSi++;
+		//	idxSj = lastIdxSj;
+			
+			arr[idxSi][idxSj].classList.add('snakeUp');
+			console.log(idxSi, idxSj);
+			lastSnake = snakeSt;
+			lastIdxSi = idxSi;
+			lastIdxSj = idxSj;
+			console.log(snakeSt);
+			
+			if (snakeSt === preyP) {
+				preyP.classList.remove('preyUp');
+				score++;
+				scoreBoard.textContent = score;
+				peep();
+			}
+		}
+		function peep() {
+			preyP = randomPrey(squares);
+			preyP.classList.add('preyUp');
+		//	if () {
+		//		prey.classList.remove('preyUp');
+		//	}
+		
+			
+		 }
+		
+	//	const keyCode = 
+		
+		
+		
+		
+		
+		function handleChangeDirection(e){
+		
+		
+			
+		
+			console.log(e.keyCode);
+			if (e.keyCode == 37){
+				
+				
+				
+				clearInterval(myVar2);
+			clearInterval(myVar3);
+			clearInterval(myVar4);
+			
+			console.log(myVar1);
+		console.log(myVar2);
+		console.log(myVar3);
+		console.log(myVar4);
+		
+			}
+			if (e.keyCode == 38){
+				
+				
+			
+				clearInterval(myVar1);
+			clearInterval(myVar3);
+			clearInterval(myVar4);
+			
+			console.log(myVar1);
+		console.log(myVar2);
+		console.log(myVar3);
+		console.log(myVar4);
+		 
+			}
+			if (e.keyCode == 39){
+				
+				 
+//				setMoveRight();
+			}
+			if (e.keyCode == 40){
+				
+				 
+//				setMoveDown();
+			}
+			
+		}
+		
+//		function setClearInterval() {
+//			var myVar1 = setInterval(setMoveLeft, 1000);
+//			clearInterval(myVar1);
+//		}
+		
+		window.addEventListener('keydown', handleChangeDirection);
+//		window.addEventListener('keydown', setClearInterval);
+	</script>
+</html>

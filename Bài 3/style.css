@@ -1,0 +1,38 @@
+.clear {clear: both;}
+
+.body {
+	margin: 20px;
+}
+h3 {
+	color: green;
+	text-transform: uppercase;
+}
+
+.score {
+  color: red;
+  padding: 0 3rem;
+}
+
+.environment {
+	margin: 20px;
+}
+
+.snake {
+	background-color: green;
+	width: 20px;
+	height: 20px;
+}
+
+.prey {
+	background-color: yellow;
+	width: 20px;
+	height: 20px;
+}
+
+tr td.snakeUp {
+	background-color: blue;
+}
+
+tr td.preyUp {
+	background-color: yellow;
+}

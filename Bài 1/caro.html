@@ -1,0 +1,107 @@
+<html>
+	<head>
+		<title>Caro</title>
+		<meta charset="utf-8" />
+		<link href="reset.css" type="text/css" rel="stylesheet" />
+		<link href="style.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="grid-container">
+		  <div class="item grid-item1"><span></span></div>
+		  <div class="item grid-item2"></div>
+		  <div class="item grid-item3"></div>  
+		  <div class="item grid-item4"></div>
+		  <div class="item grid-item5"></div>
+		  <div class="item grid-item6"></div>  
+		  <div class="item grid-item7"></div>
+		  <div class="item grid-item8"></div>
+		  <div class="item grid-item9"></div>  
+		</div>
+		<div>
+			<p></p>
+			<button onClick="resetGame()">Reset!</button>
+		</div>
+	</body>
+	<script>
+		const items = document.querySelectorAll('.item');
+		const button = document.querySelector('button');
+		
+		const p = document.querySelector('p');
+		
+		let tick1 = "X";
+		let tick2 = "O";
+		let i = 0;
+		
+		function handleClick(){
+			if (this.textContent !== ""){
+				alert("Ô này đã được tick!");
+				return;
+			}
+			i++;
+			console.log(i);
+			if (i % 2 === 1){
+				this.textContent = tick1;
+				console.log(this);
+			} else {
+				this.textContent = tick2;
+				console.log(this);
+			}
+			if (check()) {
+				button.classList.add('open');
+			};
+			if ((i == 9) && (!check())) {
+				p.textContent = 'Nobody win!!!';
+				button.classList.add('open');
+			}		
+		}
+		
+		function check() {
+			let tickX = 0;
+			let tickO = 0;
+			let countRow = 0;
+			
+			for (let i = 0; i < 9; i++){
+				console.log(i);
+				console.log(items[i].textContent);
+				
+				if ((items[0].textContent == items[1].textContent && items[0].textContent == items[2].textContent && items[0].textContent == tick1)
+					|| (items[3].textContent == items[4].textContent && items[3].textContent == items[5].textContent && items[3].textContent == tick1)
+					|| (items[3].textContent == items[4].textContent && items[3].textContent == items[5].textContent && items[3].textContent == tick1)
+					|| (items[6].textContent == items[7].textContent && items[6].textContent == items[8].textContent && items[6].textContent == tick1)
+					|| (items[0].textContent == items[3].textContent && items[0].textContent == items[6].textContent && items[0].textContent == tick1)
+					|| (items[1].textContent == items[4].textContent && items[1].textContent == items[7].textContent && items[1].textContent == tick1)
+					|| (items[2].textContent == items[5].textContent && items[2].textContent == items[8].textContent && items[2].textContent == tick1)
+					|| (items[0].textContent == items[4].textContent && items[0].textContent == items[8].textContent && items[0].textContent == tick1)
+					|| (items[2].textContent == items[4].textContent && items[2].textContent == items[6].textContent && items[2].textContent == tick1)){						
+						p.textContent = 'Player1 win!!!';
+						return true;																	
+				}
+				if ((items[0].textContent == items[1].textContent && items[0].textContent == items[2].textContent && items[0].textContent == tick2)
+					|| (items[3].textContent == items[4].textContent && items[3].textContent == items[5].textContent && items[3].textContent == tick2)
+					|| (items[3].textContent == items[4].textContent && items[3].textContent == items[5].textContent && items[3].textContent == tick2)
+					|| (items[6].textContent == items[7].textContent && items[6].textContent == items[8].textContent && items[6].textContent == tick2)
+					|| (items[0].textContent == items[3].textContent && items[0].textContent == items[6].textContent && items[0].textContent == tick2)
+					|| (items[1].textContent == items[4].textContent && items[1].textContent == items[7].textContent && items[1].textContent == tick2)
+					|| (items[2].textContent == items[5].textContent && items[2].textContent == items[8].textContent && items[2].textContent == tick2)
+					|| (items[0].textContent == items[4].textContent && items[0].textContent == items[8].textContent && items[0].textContent == tick2)
+					|| (items[2].textContent == items[4].textContent && items[2].textContent == items[6].textContent && items[2].textContent == tick2)){						
+						p.textContent = 'Player2 win!!!';
+						return true;																	
+				}	
+			}
+			return false;
+			
+		}
+		
+		function resetGame(){
+			items.forEach(item => item.textContent = "");
+			p.textContent = '';
+			i = 0;
+		}
+		
+		items.forEach(item => item.addEventListener('click', handleClick));
+		
+	</script>
+</html>
+
+
